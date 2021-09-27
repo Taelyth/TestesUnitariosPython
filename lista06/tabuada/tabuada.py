@@ -31,19 +31,30 @@ def checagem_de_caracteres(texto):
         print(numero_negativo)
         return numero_negativo
     else:
-        tabuada(texto)
+        return tabuada(texto)
 
 
 if __name__ == '__main__':
+    digitar = input('Digite o número que deseja saber a tabuada: ')
     while True:
-        digitar = input('Digite o número que deseja saber a tabuada: ')
+        # digitar = input('Digite o número que deseja saber a tabuada: ')
         if digitar.lstrip('-').isdigit():
             checagem_de_caracteres(int(digitar))
         else:
             checagem_de_caracteres(digitar)
 
-        sair = input('\nVocê quer ver a tabuada de outro número? Digite S para continuar.\n')
-        if sair.upper() == 'S':
+        # Primeira idéia:
+        # sair = input('\nVocê quer ver a tabuada de outro número? Digite S para continuar.\n')
+        # if sair.upper() == 'S':
+        #     continue
+        # else:
+        #     print('Valeu!')
+        #     break
+
+        # idéia melhorada:
+        sair = input('\nPara saber outra tabuada digite um número, se quiser sair digite S\n')
+        if sair.upper() != 'S':
+            digitar = sair
             continue
         else:
             print('Valeu!')
