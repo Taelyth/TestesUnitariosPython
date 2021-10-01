@@ -17,7 +17,6 @@ def tabuada(numero):
     # for soma in range(1, 11):
     #     lista.append(soma * numero)
     #     print(f'{soma} x {numero} = {lista[soma - 1]}')
-    #     soma += 1
     # return lista
 
 

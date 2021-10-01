@@ -1,7 +1,9 @@
 # 1 - imports - bibliotecas
+import pytest
 
 
 # 2 - class - classe
+
 
 # 3 - definitions - definições = métodos e funções
 def print_hi(name):
@@ -27,7 +29,34 @@ def dividir(numero1, numero2):
         return 'Não pode dividir por Zero'
 
 
+def dividir_try_except(numero1, numero2):
+    try:
+        return numero1 // numero2
+    except ZeroDivisionError:
+        return 'Não pode dividir por Zero'
+    # finally:
+    #     print("Codigo rodou")
+
+
 # Testes Unitários / Teste de Unidades
+# Teste Parametrizado
+@pytest.mark.parametrize('numero1,numero2,resultado_esperado', [
+    # valores
+    (5, 4, 9),  # teste 1
+    (3, 2, 5),  # teste 2
+    (10, 6, 16),  # teste 3
+    (10, 6, 15)  # teste 4
+])
+def test_somar_parametrizado(numero1, numero2, resultado_esperado):
+    try:
+        assert somar(numero1, numero2) == resultado_esperado
+    except AssertionError:
+        print(f'Entrou no Except: {AssertionError}')
+    finally:
+        print('Código rodou')
+# O try/except não é usado muito para testes, mas sim pra programação.
+# Para fazer testes negativos, é melhor utilizar os asserts para as mensagens de erro
+
 
 # teste da função somar
 def test_somar():
@@ -65,13 +94,23 @@ def test_dividir_por_zero_compacto():
     assert dividir(8, 0) == 'Não pode dividir por Zero'
 
 
+@pytest.mark.parametrize('num1, num2, resultado_esperado', [
+    (8, 4, 2),
+    (8, 0, 'Não pode dividir por Zero'),
+    (20, 4, 5)
+])
+def test_dividir_try_except(num1, num2, resultado_esperado):
+    assert dividir_try_except(num1, num2) == resultado_esperado
+
+
 if __name__ == '__main__':
     print_hi('Jaque')
 
     # soma de 2 números
-    resultado = somar(1, 2)
+    resultado = somar(5, 6)
     print(f'O resultado da soma é: {resultado}')
 
+'''
     # subtração de 2 números
     resultado = subtrair(5, 3)
     print(f'O resultado da subtração é: {resultado}')
@@ -83,3 +122,4 @@ if __name__ == '__main__':
     # divisão
     resultado = dividir(4, 2)
     print(f'O resultado da divisão é: {resultado}')
+'''
