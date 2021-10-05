@@ -13,10 +13,10 @@ class TesteFosforo:
         assert calcular_fosforos(0) == 'Com 0 Caixas você NÃO possui fósforos'
 
     def test_calcular_fosforos_vazio(self):
-        assert calcular_fosforos("") == 'Só aceito Números Inteiros!'
+        assert calcular_fosforos('') == 'Só aceito Números Inteiros!'
 
     def test_calcular_fosforos_letras(self):
-        assert calcular_fosforos("b") == 'Só aceito Números Inteiros!'
+        assert calcular_fosforos('b') == 'Só aceito Números Inteiros!'
 
     def test_calcular_fosforos_decimal(self):
         assert calcular_fosforos(0.2) == 'Só aceito Números Inteiros!'

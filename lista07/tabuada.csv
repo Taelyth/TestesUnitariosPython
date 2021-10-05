@@ -1,0 +1,7 @@
+parametro,resultado_esperado
+3,"[3, 6, 9, 12, 15, 18, 21, 24, 27, 30]"
+b,Só aceito Números Inteiros!
+-1,Você NÃO pode colocar números negativos
+"",Só aceito Números Inteiros!
+0.9,Só aceito Números Inteiros!
+0,"[0, 0, 0, 0, 0, 0, 0, 0, 0, 0]"
