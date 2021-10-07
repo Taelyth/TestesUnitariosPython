@@ -49,3 +49,54 @@ def testar_consultar_usuario():
     assert corpo_resposta['username'] == username
     assert corpo_resposta['firstName'] == firstname_esperado
     assert corpo_resposta['email'] == email_esperado
+
+
+def testar_atualizar_usuario():
+    # Configura
+    username = 'Testinho'
+    headers = {'content-type': 'application/json'}
+    dados = {
+        'id': id_usuario,
+        'username': username,
+        'firstName': 'Batata',
+        'lastName': 'Frita',
+        'email': 'frita@batata.com.br',
+        'password': 'batata123',
+        'phone': '11988888888',
+        'userStatus': 0
+    }
+    status_code_esperado = 200
+
+    # Executa
+    resposta = requests.put(url=f'{url}user/{username}',
+                            data=json.dumps(dados),
+                            headers=headers)
+    print(resposta)
+    print(resposta.status_code)
+    corpo_resposta = resposta.json()
+    print(json.dumps(corpo_resposta, indent=4))
+
+    # Valida
+    assert resposta.status_code == status_code_esperado  # Código de comunicação
+    assert corpo_resposta['code'] == status_code_esperado  # Código na funcionalidade
+    assert corpo_resposta['message'] == str(id_usuario)
+
+
+def testar_deletar_usuario():
+    # Configura
+    username = 'Testinho'
+    headers = {'content-type': 'application/json'}
+    status_code_esperado = 200
+
+    # Executa
+    resposta = requests.delete(url=f'{url}user/{username}',
+                               headers=headers)
+    print(resposta)
+    print(resposta.status_code)
+    corpo_resposta = resposta.json()
+    print(json.dumps(corpo_resposta, indent=4))
+
+    # Valida
+    assert resposta.status_code == status_code_esperado  # Código de comunicação
+    assert corpo_resposta['code'] == status_code_esperado  # Código na funcionalidade
+    assert corpo_resposta['message'] == username
