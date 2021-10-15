@@ -1,0 +1,22 @@
+{
+  "id": 45641848,
+  "category": {
+    "id": 2,
+    "name": "gato"
+  },
+  "name": "Kuro",
+  "photoUrls": [
+    "https://i.pinimg.com/236x/26/aa/ac/26aaacc5810c544f7ebc70148451aa25--exorcist-anime-ao-no-exorcist-kuro.jpg"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "pequeno"
+    },
+    {
+      "id": 2,
+      "name": "preto"
+    }
+  ],
+  "status": "available"
+}
