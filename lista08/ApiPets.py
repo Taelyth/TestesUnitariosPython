@@ -7,7 +7,7 @@ url = 'https://petstore.swagger.io/v2/'
 id_pet = 45641848
 
 
-# Método para ler o Json (assim não é necessário se preocupar se o arquivo foi fechado da memória, pois o método fecha.
+# Método para ler o Json (assim não é necessário se preocupar se o arquivo foi fechado da memória, pois o método fecha.)
 def ler_json(caminho):
     with open(caminho, 'rb') as arquivo:
         dados = arquivo.read()  # adicionar o arquivo em uma variável, para depois retorná-la
